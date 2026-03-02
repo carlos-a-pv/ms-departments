@@ -1,0 +1,22 @@
+package com.uq.msdepartments.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class DepartmentDTO {
+
+    private Long id;
+
+    @NotBlank
+    private String nombre;
+
+    @NotBlank
+    private String descripcion;
+}

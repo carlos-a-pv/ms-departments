@@ -1,0 +1,11 @@
+com\uq\msdepartments\entity\Department$DepartmentBuilder.class
+com\uq\msdepartments\controller\DepartmentController.class
+com\uq\msdepartments\service\DepartmentService.class
+com\uq\msdepartments\dto\DepartmentDTO$DepartmentDTOBuilder.class
+com\uq\msdepartments\mapper\DepartmentMapper.class
+com\uq\msdepartments\service\impl\DepartmentServiceImpl.class
+com\uq\msdepartments\config\OpenApiConfig.class
+com\uq\msdepartments\dto\DepartmentDTO.class
+com\uq\msdepartments\repository\DepartmentRepository.class
+com\uq\msdepartments\MsDepartmentsApplication.class
+com\uq\msdepartments\entity\Department.class

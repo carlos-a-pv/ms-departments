@@ -2,6 +2,7 @@ package com.uq.msdepartments.service.impl;
 
 import com.uq.msdepartments.dto.DepartmentDTO;
 import com.uq.msdepartments.entity.Department;
+import com.uq.msdepartments.exception.DepartmentNotFoundException;
 import com.uq.msdepartments.mapper.DepartmentMapper;
 import com.uq.msdepartments.repository.DepartmentRepository;
 import com.uq.msdepartments.service.DepartmentService;
@@ -28,7 +29,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public DepartmentDTO getById(Long id) {
         Department entity = repository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Department not found with id: " + id));
+                .orElseThrow(() -> new DepartmentNotFoundException(id));
         return DepartmentMapper.toDto(entity);
     }
 
@@ -40,7 +41,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public DepartmentDTO update(Long id, DepartmentDTO dto) {
         Department existing = repository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Department not found with id: " + id));
+                .orElseThrow(() -> new DepartmentNotFoundException(id));
 
         existing.setNombre(dto.getNombre());
         existing.setDescripcion(dto.getDescripcion());
@@ -51,7 +52,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public void delete(Long id) {
         if (!repository.existsById(id)) {
-            throw new IllegalArgumentException("Department not found with id: " + id);
+            throw new DepartmentNotFoundException(id);
         }
         repository.deleteById(id);
     }

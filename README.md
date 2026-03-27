@@ -30,9 +30,9 @@ Por defecto, la aplicación usa el puerto `8081` (ver `src/main/resources/applic
 
 Propiedades actuales (por defecto):
 
-- `spring.datasource.url=jdbc:postgresql://localhost:5432/deparments_db`
-- `spring.datasource.username=admin`
-- `spring.datasource.password=admin123`
+- `spring.datasource.url=${SPRING_DATASOURCE_URL}`
+- `spring.datasource.username=${SPRING_DATASOURCE_USERNAME}`
+- `spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}`
 
 Asegúrate de que:
 
